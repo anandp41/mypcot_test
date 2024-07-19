@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/colors.dart';
 import '../../../../core/textstyles.dart';
 
 class DayDateColumnUnHighlighted extends StatelessWidget {
@@ -18,11 +17,7 @@ class DayDateColumnUnHighlighted extends StatelessWidget {
       children: [
         Text(
           day,
-          style: const TextStyle(
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.w100,
-              fontSize: 15,
-              color: blueGrey),
+          style: dayDateColumnUnHighlightedTS,
         ),
         Text(
           date,

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:signed_spacing_flex/signed_spacing_flex.dart';
 
 import '../../../../core/colors.dart';
 import '../../../../core/textstyles.dart';
 import '../circle_image.dart';
+import '../small_circle_image_green_dot.dart';
 
 class Carousel3 extends StatelessWidget {
   const Carousel3({
@@ -15,19 +17,20 @@ class Carousel3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          height: 10.sp,
         ),
         Container(
-          // padding: const EdgeInsets.only(top: 0),
-          height: 240,
+          height: 240.sp,
           decoration: BoxDecoration(
               color: lightGreen, borderRadius: BorderRadius.circular(20)),
           width: double.infinity,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 32.0, bottom: 24, left: 20),
+                padding:
+                    EdgeInsets.only(top: 32.sp, bottom: 24.sp, left: 20.sp),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,19 +40,20 @@ class Carousel3 extends StatelessWidget {
                           color: kWhite, shape: BoxShape.circle),
                       child: SvgPicture.asset(
                         'assets/icons/customers-illustration-image.svg',
+                        width: 120.sp,
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: EdgeInsets.only(left: 10.sp),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 7, horizontal: 18),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 7.sp, horizontal: 18.sp),
                         decoration: const ShapeDecoration(
                             color: pink,
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(14)))),
-                        child: const Text(
+                        child: Text(
                           "View Customers",
                           style: ordersTS,
                         ),
@@ -59,57 +63,50 @@ class Carousel3 extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(left: 5),
-                transform: Matrix4.translationValues(0, -7, 0),
+                padding: EdgeInsets.only(left: 5.sp),
+                transform: Matrix4.translationValues(0, -7.sp, 0),
                 child: Stack(
-                  // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const SizedBox(
-                      height: 300,
-                      width: 180,
+                    SizedBox(
+                      height: 300.sp,
+                      width: 180.sp,
                     ),
                     Positioned(
                       right: 0,
-                      top: 88,
+                      top: 88.sp,
                       child: Stack(
                         children: [
-                          // const SizedBox(
-                          //   height: 100,
-                          // ),
                           Container(
-                            height: 70,
-                            width: 140,
-                            decoration: const ShapeDecoration(
+                            height: 70.sp,
+                            width: 140.sp,
+                            decoration: ShapeDecoration(
                                 shadows: [
                                   BoxShadow(
-                                      blurRadius: 4,
-                                      spreadRadius: 2,
+                                      blurRadius: 4.sp,
+                                      spreadRadius: 2.sp,
                                       color: shadowColor)
                                 ],
                                 color: kWhite,
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15)))),
                           ),
-                          const Positioned(
-                            left: 15,
-                            right: 25,
-                            top: 10,
+                          Positioned(
+                            left: 15.sp,
+                            right: 25.sp,
+                            top: 10.sp,
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
                                   '1.8%',
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 26,
-                                      color: navyBlue,
-                                      fontWeight: FontWeight.w900),
+                                  style: carousel3Middle18TS,
                                 ),
                                 Icon(
                                   Icons.arrow_upward,
                                   color: lightGreen,
+                                  size: 26.sp,
                                 )
                               ],
                             ),
@@ -123,50 +120,45 @@ class Carousel3 extends StatelessWidget {
                       right: 0,
                       child: Stack(
                         children: [
-                          const SizedBox(
-                            height: 100,
+                          SizedBox(
+                            height: 100.sp,
                           ),
                           Container(
-                            height: 80,
-                            width: 145,
-                            padding: const EdgeInsets.symmetric(horizontal: 14),
-                            decoration: const ShapeDecoration(
+                            height: 80.sp,
+                            width: 145.sp,
+                            padding: EdgeInsets.symmetric(horizontal: 14.sp),
+                            decoration: ShapeDecoration(
                                 shadows: [
                                   BoxShadow(
-                                      blurRadius: 4,
-                                      spreadRadius: 2,
+                                      blurRadius: 4.sp,
+                                      spreadRadius: 2.sp,
                                       color: shadowColor)
                                 ],
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15))),
                                 color: pink),
                           ),
                           Positioned(
-                            top: 8,
-                            left: 8,
+                            top: 8.sp,
+                            left: 8.sp,
                             child: Column(
                               children: [
                                 RichText(
                                     textAlign: TextAlign.center,
-                                    text: const TextSpan(children: [
+                                    text: TextSpan(children: [
                                       TextSpan(
-                                          text: '15 ',
-                                          style: TextStyle(
-                                              color: kWhite,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: 22)),
+                                          text: '15 ', style: carousel3Top15TS),
                                       TextSpan(
                                           text: 'New Customers',
                                           style: ordersTS)
                                     ])),
-                                const SizedBox(
-                                  height: 22,
+                                SizedBox(
+                                  height: 22.sp,
                                 ),
                                 SignedSpacingRow(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  spacing: -8,
+                                  spacing: -8.sp,
                                   stackingOrder: StackingOrder.lastOnTop,
                                   children: [
                                     const CircleImage(
@@ -182,20 +174,20 @@ class Carousel3 extends StatelessWidget {
                                       color: lightBlue,
                                     ),
                                     Container(
-                                      decoration: const ShapeDecoration(
-                                          shape: CircleBorder(),
+                                      decoration: ShapeDecoration(
+                                          shape: const CircleBorder(),
                                           shadows: [
                                             BoxShadow(
-                                                blurRadius: 2,
-                                                spreadRadius: 2,
+                                                blurRadius: 2.sp,
+                                                spreadRadius: 2.sp,
                                                 color: shadowColor)
                                           ]),
-                                      child: const CircleAvatar(
+                                      child: CircleAvatar(
                                         backgroundColor: kWhite,
-                                        radius: 10,
+                                        radius: 10.sp,
                                         child: Icon(
                                           Icons.add,
-                                          size: 16,
+                                          size: 16.sp,
                                           color: blueGrey,
                                         ),
                                       ),
@@ -209,62 +201,44 @@ class Carousel3 extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                        top: 168,
-                        right: 60,
+                        top: 168.sp,
+                        right: 60.sp,
                         child: Stack(
                           children: [
-                            // const SizedBox(
-                            //   height: 100,
-                            // ),
                             Container(
-                              height: 65,
-                              width: 100,
-                              decoration: const ShapeDecoration(
+                              height: 65.sp,
+                              width: 100.sp,
+                              decoration: ShapeDecoration(
                                   shadows: [
                                     BoxShadow(
-                                        blurRadius: 4,
-                                        spreadRadius: 2,
+                                        blurRadius: 4.sp,
+                                        spreadRadius: 2.sp,
                                         color: shadowColor)
                                   ],
                                   color: kWhite,
-                                  shape: RoundedRectangleBorder(
+                                  shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15)))),
                             ),
                             Positioned(
-                              left: 10,
-                              // right: 4,s
+                              left: 10.sp,
                               bottom: 0,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   RichText(
-                                      text: const TextSpan(children: [
+                                      text: TextSpan(children: [
                                     TextSpan(
-                                        text: '10',
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w700,
-                                            color: navyBlue)),
+                                        text: '10', style: carousel3Bottom10TS),
                                     TextSpan(
                                         text: ' Active',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w400,
-                                            color: blueGrey)),
+                                        style: carousel3BottomActiveTS),
                                     TextSpan(
                                         text: '\nCustomers',
-                                        style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          color: navyBlue,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                        ))
+                                        style: carousel3BottomCustomersTS)
                                   ])),
-                                  const SizedBox(
-                                    height: 8,
+                                  SizedBox(
+                                    height: 8.sp,
                                   ),
                                 ],
                               ),
@@ -272,10 +246,10 @@ class Carousel3 extends StatelessWidget {
                           ],
                         )),
                     Positioned(
-                        top: 190,
+                        top: 190.sp,
                         right: 0,
                         child: SignedSpacingRow(
-                          spacing: -2,
+                          spacing: -2.sp,
                           stackingOrder: StackingOrder.lastOnTop,
                           children: const [
                             SmallCircleImageGreenDot(
@@ -295,44 +269,6 @@ class Carousel3 extends StatelessWidget {
             ],
           ),
         ),
-      ],
-    );
-  }
-}
-
-class SmallCircleImageGreenDot extends StatelessWidget {
-  final String path;
-  const SmallCircleImageGreenDot({
-    super.key,
-    required this.path,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          clipBehavior: Clip.hardEdge,
-          height: 26,
-          width: 26,
-          decoration: const ShapeDecoration(
-              shape: CircleBorder(
-                  side: BorderSide(
-                      strokeAlign: BorderSide.strokeAlignOutside,
-                      width: 2,
-                      color: lightBlue))),
-          child: Image.asset(
-            path,
-            fit: BoxFit.fill,
-          ),
-        ),
-        const Positioned(
-            bottom: 1,
-            right: 3,
-            child: CircleAvatar(
-              radius: 4,
-              backgroundColor: mediumGreen,
-            ))
       ],
     );
   }

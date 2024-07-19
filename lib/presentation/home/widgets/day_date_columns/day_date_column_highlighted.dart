@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/colors.dart';
 import '../../../../core/textstyles.dart';
@@ -18,22 +19,22 @@ class DayDateColumnHighlighted extends StatelessWidget {
       children: [
         Text(
           day,
-          style: const TextStyle(
+          style: TextStyle(
               fontFamily: 'Roboto',
               fontWeight: FontWeight.w500,
-              fontSize: 15,
+              fontSize: 15.sp,
               color: darkGreen),
         ),
         Text(
           date,
           style: dateGreenTS,
         ),
-        const SizedBox(
-          height: 3,
+        SizedBox(
+          height: 3.sp,
         ),
-        const Icon(
+        Icon(
           Icons.circle,
-          size: 8,
+          size: 8.sp,
           color: darkGreen,
         )
       ],

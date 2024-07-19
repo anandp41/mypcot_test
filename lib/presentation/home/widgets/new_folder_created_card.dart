@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/colors.dart';
@@ -12,21 +13,22 @@ class NewFolderCreatedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16.sp),
         child: Container(
-          height: 160,
+          height: 160.sp,
           width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-          decoration: const BoxDecoration(
+          padding: EdgeInsets.symmetric(horizontal: 32.sp, vertical: 20.sp),
+          decoration: BoxDecoration(
               color: kWhite,
               boxShadow: [
-                BoxShadow(spreadRadius: 4, blurRadius: 15, color: shadowColor)
+                BoxShadow(
+                    spreadRadius: 4.sp, blurRadius: 15.sp, color: shadowColor)
               ],
-              borderRadius: BorderRadius.all(Radius.circular(20))),
+              borderRadius: const BorderRadius.all(Radius.circular(20))),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Column(
+              Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -36,37 +38,30 @@ class NewFolderCreatedCard extends StatelessWidget {
                     ),
                     Text(
                       'New Order created with Order',
-                      style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          height: 2),
+                      style: newOrderCreatedTS,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 20.sp,
                     ),
                     Text(
                       '09:00 AM',
-                      style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontSize: 12,
-                          color: dullOrange,
-                          fontWeight: FontWeight.w500),
+                      style: newOrderCardTimeTS,
                     ),
                     Icon(
                       Icons.arrow_right_alt,
                       color: dullOrange,
+                      size: 26.sp,
                     )
                   ]),
               Expanded(
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: CircleAvatar(
-                      radius: 34,
+                      radius: 34.sp,
                       backgroundColor: dullOrange,
                       child: SvgPicture.asset(
                         'assets/icons/clipboard_new.svg',
-                        height: 48,
+                        height: 48.sp,
                       )),
                 ),
               )

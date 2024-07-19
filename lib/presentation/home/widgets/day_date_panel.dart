@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'day_date_columns/day_date_column_highlighted.dart';
 import 'day_date_columns/day_date_column_unhighlighted.dart';
@@ -10,9 +11,9 @@ class DayDatePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: 16.0),
-      child: Row(
+    return Padding(
+      padding: EdgeInsets.only(left: 16.sp),
+      child: const Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

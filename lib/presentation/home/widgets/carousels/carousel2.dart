@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:signed_spacing_flex/signed_spacing_flex.dart';
 
@@ -15,21 +16,22 @@ class Carousel2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          height: 10.sp,
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          height: 240,
+          padding: EdgeInsets.symmetric(horizontal: 20.sp),
+          height: 240.sp,
           decoration: BoxDecoration(
               color: yellow, borderRadius: BorderRadius.circular(20)),
           width: double.infinity,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 32.0, bottom: 24),
+                  padding: EdgeInsets.only(top: 32.sp, bottom: 24.sp),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,17 +41,18 @@ class Carousel2 extends StatelessWidget {
                             color: kWhite, shape: BoxShape.circle),
                         child: SvgPicture.asset(
                           'assets/icons/subscriptions-illustration-image.svg',
+                          width: 120.sp,
                         ),
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 7, horizontal: 18),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 7.sp, horizontal: 18.sp),
                         decoration: const ShapeDecoration(
                             color: deepBlue,
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(14)))),
-                        child: const Text(
+                        child: Text(
                           "Subscriptions",
                           style: ordersTS,
                         ),
@@ -59,72 +62,55 @@ class Carousel2 extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(left: 25),
-                transform: Matrix4.translationValues(0, -7, 0),
+                padding: EdgeInsets.only(left: 25.sp),
+                transform: Matrix4.translationValues(0, -7.sp, 0),
                 child: Stack(
                   // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const SizedBox(
-                      height: 300,
-                      width: 170,
+                    SizedBox(
+                      height: 300.sp,
+                      width: 170.sp,
                     ),
                     Positioned(
-                      left: 30,
-                      top: 88,
+                      left: 30.sp,
+                      top: 88.sp,
                       child: Stack(
                         children: [
-                          // const SizedBox(
-                          //   height: 100,
-                          // ),
                           Container(
-                            height: 60,
-                            width: 110,
-                            decoration: const ShapeDecoration(
+                            height: 60.sp,
+                            width: 110.sp,
+                            decoration: ShapeDecoration(
                                 shadows: [
                                   BoxShadow(
-                                      blurRadius: 4,
-                                      spreadRadius: 2,
+                                      blurRadius: 4.sp,
+                                      spreadRadius: 2.sp,
                                       color: shadowColor)
                                 ],
                                 color: kWhite,
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15)))),
                           ),
                           Positioned(
-                            left: 10,
+                            left: 10.sp,
                             // right: 4,
                             bottom: 0,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 RichText(
-                                    text: const TextSpan(children: [
+                                    text: TextSpan(children: [
                                   TextSpan(
-                                      text: '10 ',
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w700,
-                                          color: navyBlue)),
+                                      text: '10 ', style: carousel2Middle10TS),
                                   TextSpan(
                                       text: ' Active',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                          color: blueGrey)),
+                                      style: carousel2MiddleActiveTS),
                                   TextSpan(
                                       text: '\nSubscriptions',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        color: navyBlue,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                      ))
+                                      style: carousel2Subscriptions)
                                 ])),
-                                const SizedBox(
-                                  height: 8,
+                                SizedBox(
+                                  height: 8.sp,
                                 ),
                               ],
                             ),
@@ -138,49 +124,44 @@ class Carousel2 extends StatelessWidget {
                       right: 0,
                       child: Stack(
                         children: [
-                          const SizedBox(
-                            height: 100,
+                          SizedBox(
+                            height: 100.sp,
                           ),
                           Container(
-                            height: 80,
-                            width: 145,
+                            height: 80.sp,
+                            width: 145.sp,
                             padding: const EdgeInsets.symmetric(horizontal: 14),
-                            decoration: const ShapeDecoration(
+                            decoration: ShapeDecoration(
                                 shadows: [
                                   BoxShadow(
-                                      blurRadius: 4,
-                                      spreadRadius: 2,
+                                      blurRadius: 4.sp,
+                                      spreadRadius: 2.sp,
                                       color: shadowColor)
                                 ],
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15))),
                                 color: deepBlue),
                           ),
                           Positioned(
-                            top: 8,
-                            left: 22,
+                            top: 8.sp,
+                            left: 22.sp,
                             child: Column(
                               children: [
                                 RichText(
                                     textAlign: TextAlign.center,
-                                    text: const TextSpan(children: [
+                                    text: TextSpan(children: [
                                       TextSpan(
-                                          text: '03 ',
-                                          style: TextStyle(
-                                              color: kWhite,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: 22)),
+                                          text: '03 ', style: carousel203TopTS),
                                       TextSpan(
                                           text: 'deliveries', style: ordersTS)
                                     ])),
-                                const SizedBox(
-                                  height: 22,
+                                SizedBox(
+                                  height: 22.sp,
                                 ),
                                 SignedSpacingRow(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  spacing: -8,
+                                  spacing: -8.sp,
                                   stackingOrder: StackingOrder.lastOnTop,
                                   children: const [
                                     CircleImage(
@@ -204,59 +185,42 @@ class Carousel2 extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                        top: 155,
+                        top: 155.sp,
                         right: 0,
                         child: Stack(
                           children: [
-                            // const SizedBox(
-                            //   height: 100,
-                            // ),
                             Container(
-                              height: 65,
-                              width: 125,
-                              decoration: const ShapeDecoration(
+                              height: 65.sp,
+                              width: 125.sp,
+                              decoration: ShapeDecoration(
                                   shadows: [
                                     BoxShadow(
-                                        blurRadius: 4,
-                                        spreadRadius: 2,
+                                        blurRadius: 4.sp,
+                                        spreadRadius: 2.sp,
                                         color: shadowColor)
                                   ],
                                   color: kWhite,
-                                  shape: RoundedRectangleBorder(
+                                  shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15)))),
                             ),
                             Positioned(
-                              left: 10,
-                              // right: 4,s
+                              left: 10.sp,
                               bottom: 0,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   RichText(
-                                      text: const TextSpan(children: [
+                                      text: TextSpan(children: [
                                     TextSpan(
                                         text: '119 ',
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w700,
-                                            color: navyBlue)),
+                                        style: carousel2Bottom119TS),
                                     TextSpan(
                                         text: ' Pending',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'Roboto',
-                                            fontWeight: FontWeight.w400,
-                                            color: blueGrey)),
+                                        style: carousel2BottomPending),
                                     TextSpan(
                                         text: '\nDeliveries',
-                                        style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          color: navyBlue,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                        ))
+                                        style: carousel2BottomDeliveriesTS)
                                   ])),
                                   const SizedBox(
                                     height: 8,

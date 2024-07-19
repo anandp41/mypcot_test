@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:mypcot/core/colors.dart';
+import 'core/colors.dart';
 
 import 'presentation/home/screens/home.dart';
 
@@ -13,14 +14,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mypcot',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: navyBlue),
-        useMaterial3: true,
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      designSize: const Size(411.42857142857144,
+          866.2857142857143), //screen size of my emulator in which I made the app
+      builder: (context, child) => MaterialApp(
+        title: 'Mypcot',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: navyBlue),
+          useMaterial3: true,
+        ),
+        home: const Home(),
+        debugShowCheckedModeBanner: false,
       ),
-      home: const Home(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

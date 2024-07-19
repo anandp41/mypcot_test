@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'carousels/carousel1.dart';
 import 'carousels/carousel2.dart';
@@ -23,7 +24,7 @@ class CustomCarouselSlider extends StatelessWidget {
         onPageChanged: ((index, reason) {}),
         enableInfiniteScroll: false,
         animateToClosest: true,
-        height: 250,
+        height: 250.sp,
       ),
     );
   }
